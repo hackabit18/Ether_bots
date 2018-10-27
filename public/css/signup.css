@@ -20,21 +20,6 @@ fieldset{
   border: none;
 }
 
-/* GRID */
-
-.twelve { width: 100%; }
-.eleven { width: 91.53%; }
-.ten { width: 83.06%; }
-.nine { width: 74.6%; }
-.eight { width: 66.13%; }
-.seven { width: 57.66%; }
-.six { width: 49.2%; }
-.five { width: 40.73%; }
-.four { width: 32.26%; }
-.three { width: 23.8%; }
-.two { width: 15.33%; }
-.one { width: 6.866%; }
-
 /* COLUMNS */
 
 .col {
