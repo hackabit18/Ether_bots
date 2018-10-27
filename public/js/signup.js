@@ -137,8 +137,9 @@ $(document).ready(function(){
                 }
             }
         }
-        
-        
+        // var headerSection = $('.steps li').eq(currentSectionIndex);
+        //             currentSection.removeClass("is-active").next().addClass("is-active");
+        //             headerSection.removeClass("is-active").next().addClass("is-active");
     });
     $('#next').click(function(){
         password_error = false;
@@ -199,12 +200,19 @@ $(document).ready(function(){
     /*
     * toggle options
     */
+
     $('#is_student_select').on('change',function() {
         // console.log($('#is_student_select').val());
         if($('#is_student_select').val()=='Yes') {
-            $('#student_options').append('<input type="text" name="utr_no" id="utr_no" placeholder="UTR Number"><input type="text" name="id_no" id="id_no" placeholder="ID Number"><input type="text" name="admit_no" id="admit_no" placeholder="Admit Number"><input type="text" name="score" id="score" placeholder="Score"><span class="error" id="student_error"></span>'); 
+            $('#student_options').append('<input type="text" name="utr_no" id="utr_no" placeholder="UTR Number"><input type="text" name="id_no" id="id_no" placeholder="ID Number"><input type="text" name="admit_no" id="admit_no" placeholder="Admit Number"><input type="text" name="score" id="score" placeholder="Score"><input type="text" name="boards_marks" id="boards_marks" placeholder="Boards Marks"><br><div class="verified"><i class="fa fa-check-circle-o" aria-hidden="true"></i></div>'); 
+            $('#verify').css("opacity","1");
         } else {
             $('#student_options').empty();
         }
+    });
+
+    $('#verify').click(function(e) {
+        e.preventDefault;
+        $('.verified').css("opacity","1");
     });
 });
