@@ -37,6 +37,22 @@
 			{
 				"name": "dob",
 				"type": "bytes32"
+			},
+			{
+				"name": "utrNo",
+				"type": "bytes32"
+			},
+			{
+				"name": "idNumber",
+				"type": "bytes32"
+			},
+			{
+				"name": "admitNumber",
+				"type": "bytes32"
+			},
+			{
+				"name": "score",
+				"type": "bytes32"
 			}
 		],
 		"name": "setUserData",
@@ -67,6 +83,22 @@
 		"outputs": [
 			{
 				"name": "fingerprint",
+				"type": "bytes32"
+			},
+			{
+				"name": "utrNo",
+				"type": "bytes32"
+			},
+			{
+				"name": "idNumber",
+				"type": "bytes32"
+			},
+			{
+				"name": "admitNumber",
+				"type": "bytes32"
+			},
+			{
+				"name": "score",
 				"type": "bytes32"
 			}
 		],
