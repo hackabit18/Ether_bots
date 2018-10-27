@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+
+.logo-main {
+  margin-top: 150px;
+  margin-left: 130px;
+  font-size: 5em;
+  letter-spacing: 2px;
+  font-family: 'Righteous', cursive;
+  color: #fff;
+}
+
+.Iam {
+  margin-top: -50px;
+  padding: 0em 5em;
+  font: normal 40px/50px Montserrat, sans-serif;
+  color: #000;
+}
+.Iam p {
+  height: 50px;
+  float: left;
+  margin-right: 0.3em;
+}
+.Iam b {
+  float: left;
+  overflow: hidden;
+  position: relative;
+  height: 50px;
+  top: 40px;
+}
+.Iam .innerIam {
+  display: inline-block;
+  color: #000;
+  position: relative;
+  white-space: nowrap;
+  top: 0;
+  left: 0;
+
+
+/*animation*/
+-webkit-animation:move 3s;
+   -moz-animation:move 3s;
+    -ms-animation:move 3s;
+     -o-animation:move 3s;
+        animation:move 3s;
+/*animation-iteration-count*/
+-webkit-animation-iteration-count:infinite;
+   -moz-animation-iteration-count:infinite;
+    -ms-animation-iteration-count:infinite;
+     -o-animation-iteration-count:infinite;
+        animation-iteration-count:infinite;
+/*animation-delay*/
+-webkit-animation-delay:1s;
+   -moz-animation-delay:1s;
+    -ms-animation-delay:1s;
+     -o-animation-delay:1s;
+        animation-delay:1s;
+}
+@keyframes move{
+0%  { top: 0px; }
+33% { top: -50px; }
+66% { top: -100px; }
+}
+
+
