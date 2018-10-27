@@ -8,13 +8,14 @@ const Web3 = require('web3');
 const fs = require('fs');
 const EthereumTx = require('ethereumjs-tx');
 const sigUtil = require('eth-sig-util');
+const config = require('../config.json');
 
 var web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/c3e5ff7e41d34e45bd5e4338a8f6806a"));
 /* contract declaration */
-web3.eth.defaultAccount = '0x514e011e0Ce512c06E23E192A0469f448b0F52ce';
-var privKey = "3D6A8A4B7B59F3EFC165B58B8AD9004DF7828F81B793E44601DB08AFAB83405E";
+web3.eth.defaultAccount = '0x8d94f5549ec081d77acfae6a0b42692fed75d52f';
+var privKey = "5D511D4051388235C03AA1D49A847A91269864EAFFFE753FFC0ACD7F685C75C9";
 var abi = JSON.parse(fs.readFileSync('./UserAbi.json'));
-var address = '0xec5c6F39979fA319Fb76C0b8643324A7c9Ccd125';
+var address = '0xeea4d4a04d2c01d0402151538e0300753298ceb4';
 
 router.post('/signup',(req,res,next) => {
     users
@@ -32,8 +33,8 @@ router.post('/signup',(req,res,next) => {
         var bod = req.body;
         let msgParams = [
             {
-                type: 'bytes32',      // Any valid solidity type
-                name: 'Message',     // Any string label you want
+                type: 'bytes32',
+                name: 'Message',
                 value: bod.password
             }
         ]
@@ -114,15 +115,32 @@ router.post('/signup',(req,res,next) => {
 });
 
 router.post('/login',(req, res, next) => {
-    contract.methods.getUserData(userAddress,bod.signature).call({from:web3.eth.defaultAccount},function(err,result){
-        if(err){
-            console.log(err);
-        }
-        console.log(result);
-
-
-
+    const contract = new web3.eth.Contract(abi, address, {
+        from: web3.eth.defaultAccount ,
+        gas: 3000000,
     });
+    contract.methods.getUserData(req.body.address,req.body.signature)
+        .call({from:web3.eth.defaultAccount},function(err,result){
+            if(err){
+                return res.status(200).json({
+                    status: 'fail',
+                    message: 'Password Matching Error'
+                });
+            }
+            console.log(web3.utils.hexToAscii(result['email']));
+            const token = jwt.sign({
+                email: req.body.address,
+                password: req.body.signature
+            },
+            config.secret_key, {
+                'expiresIn': '1h'
+            });
+            return res.status(200).json({
+                status: "success",
+                message: "Successfully Logged In.",
+                token: token
+            });
+        });
 });
 
 router.get('/transactions', checkAuth, (req, res, next) => {
