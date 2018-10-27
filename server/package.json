@@ -1,0 +1,30 @@
+{
+  "name": "ether_bots",
+  "version": "1.0.0",
+  "description": "Blockchain based Unique Identification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackabit18/Ether_bots.git"
+  },
+  "author": "Ayush Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hackabit18/Ether_bots/issues"
+  },
+  "homepage": "https://github.com/hackabit18/Ether_bots#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "eth-sig-util": "^2.1.0",
+    "ethereumjs-tx": "^1.3.7",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.3.7",
+    "morgan": "^1.9.1",
+    "web3": "^1.0.0-beta.36"
+  }
+}
