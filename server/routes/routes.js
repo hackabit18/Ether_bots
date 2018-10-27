@@ -143,10 +143,6 @@ router.post('/login',(req, res, next) => {
         });
 });
 
-router.get('/transactions', checkAuth, (req, res, next) => {
-
-});
-
 router.get('/profile', checkAuth, (req, res, next) => {
     const contract = new web3.eth.Contract(abi, address, {
         from: web3.eth.defaultAccount ,
