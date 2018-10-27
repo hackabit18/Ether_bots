@@ -19,6 +19,10 @@ $(document).ready(function(){
                 $('#fingerprint').html(result.data.fingerprint);
                 $('#phone').html(result.data.phone);
                 $('#country').html(result.data.country);
+                $('#utr_no').html(result.data.utrNo);
+                $('#admit_no').html(result.data.admitNumber);
+                $('#boards_marks').html(result.data.idNo);
+                $('#score').html(result.data.score);
             }
         })
         .fail((err) => {

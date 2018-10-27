@@ -167,7 +167,7 @@ router.get('/profile', checkAuth, (req, res, next) => {
             var phone = web3.utils.hexToAscii(result['phone']);
             var country = web3.utils.hexToAscii(result['country']);
             var dob = web3.utils.hexToAscii(result['dob']);
-            
+
             var finalResult ={
                 name,email,accountAddr,perAddr,phone,country,dob
             };
@@ -180,10 +180,10 @@ router.get('/profile', checkAuth, (req, res, next) => {
                         });
                     }
                     var fingerprint = web3.utils.hexToAscii(result2['fingerprint']);
-                    var utrNo = web3.utils.fromAscii(result2['utrNo']);
-                    var idNo = web3.utils.fromAscii(result2['idNo']);
-                    var admitNumber = web3.utils.fromAscii(result2['admitNumber']);
-                    var score = web3.utils.fromAscii(result2['score']);
+                    var utrNo = web3.utils.hexToAscii(result2['utrNo']);
+                    var idNo = web3.utils.hexToAscii(result2['idNumber']);
+                    var admitNumber = web3.utils.hexToAscii(result2['admitNumber']);
+                    var score = web3.utils.hexToAscii(result2['score']);
                     finalResult.fingerprint = fingerprint;
                     finalResult.utrNo = utrNo;
                     finalResult.admitNumber = admitNumber;
