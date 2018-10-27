@@ -15,7 +15,7 @@ var web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v
 web3.eth.defaultAccount = '0x8d94f5549ec081d77acfae6a0b42692fed75d52f';
 var privKey = "5D511D4051388235C03AA1D49A847A91269864EAFFFE753FFC0ACD7F685C75C9";
 var abi = JSON.parse(fs.readFileSync('./UserAbi.json'));
-var address = '0xeea4d4a04d2c01d0402151538e0300753298ceb4';
+var address = '0x19781bcfbed8c82fcf6b226b2febceff3f26c848';
 
 router.post('/signup',(req,res,next) => {
     users
@@ -46,6 +46,10 @@ router.post('/signup',(req,res,next) => {
         var country = web3.utils.fromAscii(bod.country);
         var name = web3.utils.fromAscii(bod.name);
         var dob = web3.utils.fromAscii(bod.dob);
+        var utrNo = web3.utils.fromAscii(bod.utrNo);
+        var idNo = web3.utils.fromAscii(bod.idNo);
+        var admitNumber = web3.utils.fromAscii(bod.admitNumber);
+        var score = web3.utils.fromAscii(bod.score);
         web3.eth.getTransactionCount(web3.eth.defaultAccount,(err,nonce) => {
             if(err){
                 console.log("err1: "+err);
@@ -59,7 +63,7 @@ router.post('/signup',(req,res,next) => {
                 from: web3.eth.defaultAccount ,
                 gas: 3000000,
             });
-            const functionAbi = contract.methods.setUserData(userAddress,password,fingerprint,email,phone,perAddr,country,name,dob).encodeABI();
+            const functionAbi = contract.methods.setUserData(userAddress,password,fingerprint,email,phone,perAddr,country,name,dob,utrNo,idNo,admitNumber,score).encodeABI();
             var details = {
                 "nonce": nonce,
                 "gasPrice": web3.utils.toHex(web3.utils.toWei('70', 'gwei')),
@@ -163,6 +167,7 @@ router.get('/profile', checkAuth, (req, res, next) => {
             var phone = web3.utils.hexToAscii(result['phone']);
             var country = web3.utils.hexToAscii(result['country']);
             var dob = web3.utils.hexToAscii(result['dob']);
+            
             var finalResult ={
                 name,email,accountAddr,perAddr,phone,country,dob
             };
@@ -174,8 +179,16 @@ router.get('/profile', checkAuth, (req, res, next) => {
                             message: 'User not found.'
                         });
                     }
-                    var fingerprint = web3.utils.hexToAscii(result2);
+                    var fingerprint = web3.utils.hexToAscii(result2['fingerprint']);
+                    var utrNo = web3.utils.fromAscii(result2['utrNo']);
+                    var idNo = web3.utils.fromAscii(result2['idNo']);
+                    var admitNumber = web3.utils.fromAscii(result2['admitNumber']);
+                    var score = web3.utils.fromAscii(result2['score']);
                     finalResult.fingerprint = fingerprint;
+                    finalResult.utrNo = utrNo;
+                    finalResult.admitNumber = admitNumber;
+                    finalResult.idNo = idNo;
+                    finalResult.score = score;
                     return res.status(200).json({
                         status: "success",
                         message: "User Data fetched.",

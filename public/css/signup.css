@@ -132,9 +132,20 @@ fieldset{
   cursor: pointer;
   font-size: 14px !important;
   font-family: 'Open Sans', sans-serif !important;
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+  position: relative;
+  margin: 10px auto;
+}
+
+.form-wrapper .button2, .form-wrapper .submit{
+  background-color: #3498db;
+  display: inline-block;
+  padding: 8px 30px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px !important;
+  font-family: 'Open Sans', sans-serif !important;
+  position: relative;
+  margin: 10px auto;
 }
 
 .form-wrapper .submit{
@@ -171,4 +182,10 @@ fieldset{
 fieldset h3 {
   margin-top: 10px;
   color: #282828;
+}
+
+.verified {
+  opacity: 0;
+  font-size: 20px;
+  color: green;
 }
