@@ -129,8 +129,8 @@ router.post('/login',(req, res, next) => {
             }
             console.log(web3.utils.hexToAscii(result['email']));
             const token = jwt.sign({
-                email: req.body.address,
-                password: req.body.signature
+                address: req.body.address,
+                signature: req.body.signature
             },
             config.secret_key, {
                 'expiresIn': '1h'
@@ -172,7 +172,13 @@ router.get('/profile', checkAuth, (req, res, next) => {
             };
             contract.methods.getFingerprint(req.userData.address,req.userData.signature)
                 .call({from:web3.eth.defaultAccount},function(error,result2){
-                    var fingerprint = web3.utils.hexToAscii(result['fingerprint']);
+                    if(error){
+                        return res.status(200).json({
+                            status: 'fail',
+                            message: 'User not found.'
+                        });
+                    }
+                    var fingerprint = web3.utils.hexToAscii(result2);
                     finalResult.fingerprint = fingerprint;
                     return res.status(200).json({
                         status: "success",

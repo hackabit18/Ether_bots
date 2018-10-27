@@ -11,7 +11,14 @@ $(document).ready(function(){
                 alert(result.message);
                 window.location.href = "login.html";
             } else {
-                
+                $('#name').html(result.data.name);
+                $('#account_add').html(result.data.accountAddr);
+                $('#email').html(result.data.email);
+                $('#per_add').html(result.data.perAddr);
+                $('#dob').html(result.data.dob);
+                $('#fingerprint').html(result.data.fingerprint);
+                $('#phone').html(result.data.phone);
+                $('#country').html(result.data.country);
             }
         })
         .fail((err) => {
