@@ -148,7 +148,39 @@ router.get('/transactions', checkAuth, (req, res, next) => {
 });
 
 router.get('/profile', checkAuth, (req, res, next) => {
-
+    const contract = new web3.eth.Contract(abi, address, {
+        from: web3.eth.defaultAccount ,
+        gas: 3000000,
+    });
+    contract.methods.getUserData(req.userData.address,req.userData.signature)
+        .call({from:web3.eth.defaultAccount},function(err,result){
+            if(err){
+                return res.status(200).json({
+                    status: 'fail',
+                    message: 'User not found.'
+                });
+            }
+            var name = web3.utils.hexToAscii(result['name']);
+            var email = web3.utils.hexToAscii(result['email']);
+            var accountAddr = req.userData.address;
+            var perAddr = web3.utils.hexToAscii(result['perAddr']);
+            var phone = web3.utils.hexToAscii(result['phone']);
+            var country = web3.utils.hexToAscii(result['country']);
+            var dob = web3.utils.hexToAscii(result['dob']);
+            var finalResult ={
+                name,email,accountAddr,perAddr,phone,country,dob
+            };
+            contract.methods.getFingerprint(req.userData.address,req.userData.signature)
+                .call({from:web3.eth.defaultAccount},function(error,result2){
+                    var fingerprint = web3.utils.hexToAscii(result['fingerprint']);
+                    finalResult.fingerprint = fingerprint;
+                    return res.status(200).json({
+                        status: "success",
+                        message: "User Data fetched.",
+                        data: finalResult
+                    });
+                });
+        });
 });
 
 module.exports = router;
