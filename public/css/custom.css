@@ -1,0 +1,26 @@
+/* Your custom css code goes here */
+
+.bg-theme {
+	background-color: #161C2E;
+	color: #fff;
+}
+
+.form {
+	padding: 10%;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+
+.error {
+	color: #ff0000;
+	font-size: 0.90em;
+}
+
+/*
+
+
+
+*/
