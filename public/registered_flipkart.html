@@ -4,27 +4,44 @@
     <meta charset="utf-8">
     <title>Thank You for Signing Up</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/registered.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
   </head>
   <body class="text-center">
     <div class="container" >
       <div class="row">
-        <div class="col-md-6 center">
-          <center><div><i class="fa fa-shopping-cart" aria-hidden="true"></i></div></center>
+        <div class="col-md-6 center"  style="margin: 5px 270px;">
+          <img src="img/success.gif" loop="1" alt="Success" class="success-img" width="400px">
+        </div>
+        <div class="col-md-6 center"  style="margin: 10px auto;">
+          <h2><center>Thank You for signing up.</center></h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-6 center">
-          <img src="img/success.gif" loop="1" alt="Success" class="success-img">
-          <hr>
-          <h2><center>Thank You for signing up.</center></h2>
-
+        <div class="col-md-6 center"  style="margin: 5px 270px;">
+            <table class="table table-dark" style="border-radius: 5px;">
+              <tbody>
+                <tr>
+                  <th scope="row">Name</th>
+                  <td id="name"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Email</th>
+                  <td id="email"></td>
+                </tr>
+                <tr>
+                  <th scope="row">Phone</th>
+                  <td id="phone"></td>
+                </tr>
+              </tbody>
+            </table>
         </div>
-
       </div>
-
     </div>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="js/registered_flipkart.js"></script>
   </body>
 </html>

@@ -31,7 +31,10 @@ $(document).ready(function(){
                  
             
           
-            }
+                $('#utr_no').html(result.data.utrNo);
+                $('#admit_no').html(result.data.admitNumber);
+                $('#boards_marks').html(result.data.idNo);
+                $('#score').html(result.data.score);            }
         })
         .fail((err) => {
             alert('Some error occured.Please try again.');

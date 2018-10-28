@@ -7,6 +7,7 @@ $(document).ready(function(){
         // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
         //web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     }
+    var ch = false;
     /* Validation part */
     $('#address_error').hide();
     $('#email_error').hide();
@@ -137,9 +138,6 @@ $(document).ready(function(){
                 }
             }
         }
-        // var headerSection = $('.steps li').eq(currentSectionIndex);
-        //             currentSection.removeClass("is-active").next().addClass("is-active");
-        //             headerSection.removeClass("is-active").next().addClass("is-active");
     });
     $('#next').click(function(){
         password_error = false;
@@ -163,6 +161,16 @@ $(document).ready(function(){
             var fingerprint = $('#fingerprint').val();
             var dob = $('#dob').val();
             var perAddr = $('#address').val();
+            var utr_no = "<i>NA</i>";
+            var score = "<i>NA</i>";
+            var boards_marks = "<i>NA</i>";
+            var admit_no = "<i>NA</i>";
+            if(ch){
+                utr_no = $('#utr_no').val();
+                score = $('#score').val();
+                boards_marks = $('#boards_marks').val();
+                admit_no = $('#admit_no').val();
+            }
             var finalResult = {
                 address:account_add,
                 password:password,
@@ -172,7 +180,11 @@ $(document).ready(function(){
                 perAddr:perAddr,
                 country:country,
                 name:name,
-                dob:dob
+                dob:dob,
+                utrNo: utr_no,
+                idNo: boards_marks,
+                admitNumber: admit_no,
+                score: score
             };
             $.ajax({
                 type:"POST",
@@ -202,9 +214,9 @@ $(document).ready(function(){
     */
 
     $('#is_student_select').on('change',function() {
-        // console.log($('#is_student_select').val());
+        ch = !ch;
         if($('#is_student_select').val()=='Yes') {
-            $('#student_options').append('<input type="text" name="utr_no" id="utr_no" placeholder="UTR Number"><input type="text" name="id_no" id="id_no" placeholder="ID Number"><input type="text" name="admit_no" id="admit_no" placeholder="Admit Number"><input type="text" name="score" id="score" placeholder="Score"><input type="text" name="boards_marks" id="boards_marks" placeholder="Boards Marks"><br><div class="verified"><i class="fa fa-check-circle-o" aria-hidden="true"></i></div>'); 
+            $('#student_options').append('<input type="text" name="utr_no" id="utr_no" placeholder="UTR Number"><input type="text" name="admit_no" id="admit_no" placeholder="Admit Number"><input type="text" name="score" id="score" placeholder="Score"><input type="text" name="boards_marks" id="boards_marks" placeholder="Boards Marks"><br><div class="verified"><i class="fa fa-check-circle-o" aria-hidden="true"></i></div>');
             $('#verify').css("opacity","1");
         } else {
             $('#student_options').empty();

@@ -7,7 +7,7 @@ $(document).ready(function(){
         // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
         //web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     }
-    $("#login").click(function(e){
+    $("#allow").click(function(e){
         e.preventDefault();
         var account_add = $('#account_add').val();
         var password = $('#password').val();

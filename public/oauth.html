@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+
+    <title>BlockID Oauth</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  </head>
+
+  <body class="text-center">
+    <div class="container" style="margin-top: 70px;">
+      <div class="row">
+        <div class="col-md-18" style="margin: 10px auto 20px auto;">
+          <center>
+          <h1>BlockID | <i class="fa fa-shopping-cart" aria-hidden="true"></i></h1>
+          </center>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8" style="margin: 0 auto;">
+          <center>
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Allow Flipkart to access the following data:</h5>
+              <p class="card-text">
+              <ul class="list-group">
+                <li class="list-group-item">Name <i style="color: green;" class="fa fa-check" aria-hidden="true"></i></li>
+                <li class="list-group-item">Email <i style="color: green;" class="fa fa-check" aria-hidden="true"></i></li>
+                <li class="list-group-item">Phone Number <i style="color: green;" class="fa fa-check" aria-hidden="true"></i></li>
+              </ul>
+              </p>
+              <form class="form-signin">
+
+
+                  <input type="text" id="account_add" class="form-control" placeholder="Account Address" required>
+                  <input type="password" id="password" class="form-control" placeholder="Password" required>
+                  <hr>
+
+                  <button class="btn btn-lg btn-primary btn-block" id="allow" type="submit">Allow</button>
+                </form>
+            </div>
+          </div>
+        </center>
+        </div>
+      </div>
+    </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="js/oauth.js"></script>
+  </body>
+</html>
