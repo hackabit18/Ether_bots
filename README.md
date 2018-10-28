@@ -49,7 +49,7 @@ Note: The password is not saved anywhere in any database. The user is being veri
 
 
 ## Contributors
-- [Yash Goyal](www.github.com/ygyash)
-- [Ayush Gupta](www.github.com/AK-007)
-- [Niraj Shubham](www.github.com/Nirajx1d)
-- [Shamil Khan](www.github.com/Sam-k786)
+- [Yash Goyal](https://github.com/ygyash)
+- [Ayush Gupta](https://github.com/AK-007)
+- [Niraj Shubham](https://github.com/Nirajx1d)
+- [Shamil Khan](https://github.com/Sam-k786)
