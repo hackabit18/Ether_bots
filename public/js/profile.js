@@ -19,6 +19,18 @@ $(document).ready(function(){
                 $('#fingerprint').html(result.data.fingerprint);
                 $('#phone').html(result.data.phone);
                 $('#country').html(result.data.country);
+                
+                      
+                      var typeNumber = 0;
+                      var errorCorrectionLevel = 'L';
+                      var qr = qrcode(typeNumber, errorCorrectionLevel);
+                      qr.addData("jVrT56ad76");
+                      qr.make();
+                      $('#qrcode').html(qr.createSvgTag(6,4));
+          
+                 
+            
+          
             }
         })
         .fail((err) => {
