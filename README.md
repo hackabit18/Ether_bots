@@ -48,7 +48,7 @@ Note: The password is not saved anywhere in any database. The user is being veri
 3. Profile: The page will contain all the details of the user. 
 
 
-##Contributors
+## Contributors
 -Yash Goyal @ygyash
 -Ayush Gupta @AK-007
 -Niraj Shubham @Nirajx1d
