@@ -46,3 +46,10 @@ This application consists of four sections:
 2. Login: The user enters his account address and password. The user gets authenticated and proceeds to profile page.
 Note: The password is not saved anywhere in any database. The user is being verified using the *private key-public key logic*. The password user enters in the login page is being signed with the private key with the account address user has entered. If the account address is there in the *Metamask wallet* stored locally, one will get a pop-up prompting for signing the message. Once the message is signed, signature is sent to the smart contract along with the address. The public key or the address itself is recovered and is compared with the entered account address to authenticate the user. This ensures three things, the user address has a legit account address, the password entered is correct, the account owner himself is the one logging in. 
 3. Profile: The page will contain all the details of the user. 
+
+
+##Contributors
+-Yash Goyal @ygyash
+-Ayush Gupta @AK-007
+-Niraj Shubham @Nirajx1d
+-Shamil Khan @Sam-k786
