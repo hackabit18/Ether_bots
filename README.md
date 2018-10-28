@@ -1,6 +1,8 @@
 # Ether_bots
 *Ethereum based Unique Identity System for Students and Refugees*
 
+![abcd](https://user-images.githubusercontent.com/26346816/47611428-45bb1d00-da8b-11e8-8363-7e08bcf95ec7.gif)
+
 ## Project Idea
 By saying ethereum based identity, it’s meant that every user will be assigned an address which can be universally used to authenticate various attributes associated with his identity. 
 - As a **student**, you can easily skip the cumbersome process of reporting at the centers for verification of documents regarding their admission, by uploading all the documents(10th & 12th marksheet,Transaction receipt,JEE Scorecard) on the portal and verifying them online itself. Once the documents are verified, the student will get a QR Code which will have a hash embedded in it. This QR Code will be shown to the official at the College indicating him that the documents have been verified.
