@@ -1,10 +1,10 @@
 # Ether_bots
-Ethereum based Unique Identity System for Students and Refugees
+*Ethereum based Unique Identity System for Students and Refugees*
 
 ## Project Idea
 By saying ethereum based identity, it’s meant that every user will be assigned an address which can be universally used to authenticate various attributes associated with his identity. 
 - As a **student**, you can easily skip the cumbersome process of reporting at the centers for verification of documents regarding their admission, by uploading all the documents(10th & 12th marksheet,Transaction receipt,JEE Scorecard) on the portal and verifying them online itself. Once the documents are verified, the student will get a QR Code which will have a hash embedded in it. This QR Code will be shown to the official at the College indicating him that the documents have been verified.
-- As a **refugee**, who lost their citizenship one can get a BlockID and store all of their data on it. The UN saves your BlockID in their database as a refugee and unlock various schemes for you for example, *World Food Programme* provides cash for food to various refugees, using this BlockID this scheme will be valid for all those whose BlockID is there in the database. 
+- As a **refugee**, who lost their citizenship one can get a BlockID and store all of their data on it. The UN saves their BlockID in their database as a refugee and unlock various schemes for you for example, *World Food Programme* provides cash for food to various refugees, using this BlockID this scheme will be valid for all those whose BlockID is there in the database. 
 - With a click of a single button "SignUp using BlockId" , other websites can access the user's information only if user allows and hence create his/her account.This helps users to have a single password accross all platforms whether it be e-commerce site or an banking website etc.
 
 
