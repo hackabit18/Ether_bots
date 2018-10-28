@@ -3,14 +3,15 @@ Ethereum based Unique Identity System for Students and Refugees
 
 ## Project Idea
 By saying ethereum based identity, it’s meant that every user will be assigned an address which can be universally used to authenticate various attributes associated with his identity. 
-As a **student**, you can easily skip the cumbersome process of reporting at the centers for verification of documents regarding their admission, by uploading all the documents(10th & 12th marksheet,Transaction receipt,JEE Scorecard) on the portal and verifying them online itself. Once the documents are verified, the student will get a QR Code which will have a hash embedded in it. This QR Code will be shown to the official at the College indicating him that the documents have been verified.
-As a **refugee**, who lost their citizenship one can get a BlockID and store all of their data on it. The UN saves your BlockID in their database as a refugee and unlock various schemes for you for example, *World Food Programme* provides cash for food to various refugees, using this BlockID this scheme will be valid for all those whose BlockID is there in the database. 
+- As a **student**, you can easily skip the cumbersome process of reporting at the centers for verification of documents regarding their admission, by uploading all the documents(10th & 12th marksheet,Transaction receipt,JEE Scorecard) on the portal and verifying them online itself. Once the documents are verified, the student will get a QR Code which will have a hash embedded in it. This QR Code will be shown to the official at the College indicating him that the documents have been verified.
+- As a **refugee**, who lost their citizenship one can get a BlockID and store all of their data on it. The UN saves your BlockID in their database as a refugee and unlock various schemes for you for example, *World Food Programme* provides cash for food to various refugees, using this BlockID this scheme will be valid for all those whose BlockID is there in the database. 
+- With a click of a single button "SignUp using BlockId" , other websites can access the user's information only if user allows and hence create his/her account.This helps users to have a single password accross all platforms whether it be e-commerce site or an banking website etc.
 
 
 ## Tools and Technologies
-A smart contract has been deployed on the *Ropsten Test Network* using Remix IDE. The contract address of the account is 0x19781bcfbed8c82fcf6b226b2febceff3f26c848.
-The contract was deployed from the account 0x8d94f5549ec081d77acfae6a0b42692fed75d52f. The Ropsten network is just a test network. Ether in these wallets have no value.
-*Metamask* chrome extension wallet is used to store the private-key of various accounts and to sign the messages with the respective private-key.
+* A smart contract has been deployed on the *Ropsten Test Network* using Remix IDE. The contract address of the account is 0x19781bcfbed8c82fcf6b226b2febceff3f26c848.
+* The contract was deployed from the account 0x8d94f5549ec081d77acfae6a0b42692fed75d52f. The Ropsten network is just a test network. Ether in these wallets have no value.
+* *Metamask* chrome extension wallet is used to store the private-key of various accounts and to sign the messages with the respective private-key.
 
 ## Modules & Libraries used :
 1. web3 - web3.js library is a collection of modules which contain specific functionality for the ethereum ecosystem.
